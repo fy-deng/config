@@ -1,0 +1,12 @@
+添加防火墙规则表达式
+1. 允许自己allow_ip
+(ip.src eq 34.81.12.145) or (ip.src eq 34.96.161.108) or (ip.src eq 35.220.202.13) or (ip.src eq 152.69.195.118) or (ip.src eq 141.147.145.188) or (ip.src eq 152.70.80.26) or (ip.src eq 138.2.59.3) or (ip.src eq 34.94.8.76) or (ip.src eq 34.132.134.162) or (ip.src eq 116.202.115.221) or (ip.src eq 2603:c023:3:2600::33) or (ip.src eq 2603:c023:3:2600::66) or (ip.src eq 2603:c023:3:2600::88) or (ip.src eq 2603:c023:3:2600::99)
+
+2. 允许域名allow_domain
+(http.host contains "dfy.pp.ua") or (http.host contains "frobel.pp.ua") or (http.host contains "sherwin.pp.ua") or (http.host contains "dcdc.eu.org") or (http.host contains "psps.eu.org") or (http.host contains "qoqo.eu.org") or (http.host contains "fydeng.ga") or (http.host contains "fydeng.ml") or (http.host contains "fydeng.tk") or (http.host contains "opop.gq") or (http.host contains "psps.gq") or (http.host contains "qoqo.gq") or (http.host contains "qoqo.cf")
+
+3. 允许规则allow_rule
+(cf.client.bot) or (http.user_agent contains "duckduckgo") or (http.user_agent contains "facebookexternalhit") or (http.user_agent contains "Feedfetcher-Google") or (http.user_agent contains "LinkedInBot") or (http.user_agent contains "Mediapartners-Google") or (http.user_agent contains "msnbot") or (http.user_agent contains "Slackbot") or (http.user_agent contains "TwitterBot") or (http.user_agent contains "ia_archive") or (http.user_agent contains "yahoo")
+
+4. 托管质询规则managed_challenge_rule
+(cf.threat_score ge 5 and not cf.client.bot) or (not http.request.version in {"HTTP/1.2" "HTTP/2" "HTTP/3" "SPDY/3.1"}) or (not http.user_agent contains "Mozilla/")

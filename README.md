@@ -1,1 +1,1 @@
-# Shadowrocket config
+# configuration file & notes
