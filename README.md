@@ -24,4 +24,5 @@ sudo rm /etc/ssh/sshd_config && curl -Lo /etc/ssh/sshd_config https://raw.github
 
 ```
 curl -Lo ~/isvc+cert_no.sh https://raw.githubusercontent.com/fy-deng/config/main/isvc.sh && chmod +x isvc.sh
+./isvc.sh
 ```
