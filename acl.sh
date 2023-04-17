@@ -17,6 +17,6 @@ sudo setfacl -m u:isvc:r /etc/ssl/private/private.key
 
 sudo -u isvc cat /etc/ssl/private/private.key
 
-#ls /etc/ssl -l
-#ls /etc/ssl/private -l
-#ls /etc/ssl/privat/private.key -l
+#sudo ls /etc/ssl -l
+sudo ls /etc/ssl/private -l
+#sudo ls /etc/ssl/privat/private.key -l
