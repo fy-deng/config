@@ -5,6 +5,7 @@ clear
 #restore to initial state
 sudo chown root:root /etc/ssl/private/private.key
 sudo chgrp root /etc/ssl/private/
+sudo chmod 600 /etc/ssl/private/private.key
 
 #Insatll ACL
 sudo apt-get update -y
