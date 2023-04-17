@@ -15,3 +15,7 @@ sudo -u isvc cat /etc/ssl/private/private.key
 
 tail -l /etc/group
 tail -l /etc/passwd
+
+#ls /etc/ssl -l
+#ls /etc/ssl/private -l
+#ls /etc/ssl/privat/private.key -l
