@@ -23,7 +23,7 @@ sudo rm /etc/ssh/sshd_config && curl -Lo /etc/ssh/sshd_config https://raw.github
 3. 创建特定账号+ACL
 
 ```
-curl -Lo ~/isvc.sh https://raw.githubusercontent.com/fy-deng/config/main/acl.sh && \
+curl -Lo ~/acl.sh https://raw.githubusercontent.com/fy-deng/config/main/acl.sh && \
 chmod +x acl.sh
 ./acl.sh
 ```
