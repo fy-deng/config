@@ -25,7 +25,7 @@ sudo rm /etc/ssh/sshd_config && curl -Lo /etc/ssh/sshd_config https://raw.github
 ```
 curl -Lo ~/isvc.sh https://raw.githubusercontent.com/fy-deng/config/main/acl.sh && \
 chmod +x acl.sh
-./isvc.sh
+./acl.sh
 ```
 
 4. 创建特定账号+Cert_ro
