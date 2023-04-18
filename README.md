@@ -36,10 +36,17 @@ chmod +x isvc.sh
 ./isvc.sh
 ```
 
-5. Garbage cleanup
+5. Install nginx from official source
+
+```
+curl -Lo ~/nginx.sh https://raw.githubusercontent.com/fy-deng/config/main/nginx.sh && \
+chmod +x nginx.sh
+./nginx.sh
+```
+
+6. Garbage cleanup
 
 ```
 curl -Lo ~/clean.sh https://raw.githubusercontent.com/fy-deng/config/main/clean.sh && \
 chmod +x clean.sh
 ./clean.sh
-```
