@@ -44,9 +44,17 @@ chmod +x nginx.sh
 ./nginx.sh
 ```
 
-6. Garbage cleanup
+6. Install Cloudflare warp-cli
 
 ```
-curl -Lo ~/clean.sh https://raw.githubusercontent.com/fy-deng/config/main/clean.sh && \
+curl -Lo ~/cfwarp.sh https://raw.githubusercontent.com/fy-deng/config/main/cfwarp.sh && \
+chmod +x cfwarp.sh
+./cfwarp.sh
+
+7. Garbage cleanup
+
+```
+
+curl -Lo ~/clean.sh <https://raw.githubusercontent.com/fy-deng/config/main/clean.sh> && \
 chmod +x clean.sh
 ./clean.sh
