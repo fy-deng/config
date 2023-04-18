@@ -52,7 +52,15 @@ chmod +x cfwarp.sh
 ./cfwarp.sh
 ```
 
-7. Garbage cleanup
+7. Get wireguard configuration
+
+```
+curl -Lo ~/get_warp_conf.sh https://raw.githubusercontent.com/fy-deng/config/main/get_warp_conf.sh && \
+chmod +x get_warp_conf.sh
+./get_warp_conf.sh
+```
+
+8. Garbage cleanup
 
 ```
 curl -Lo ~/clean.sh <https://raw.githubusercontent.com/fy-deng/config/main/clean.sh> && \
