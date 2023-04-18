@@ -28,6 +28,11 @@ sudo warp-cli warp-stats
 # 建议开启永久连接功能
 sudo warp-cli enable-always-on
 
-# 测试socks代理，检查ip是否改变
-export ALL_PROXY=socks5://127.0.0.1:40000
-curl ip.sb
+# 测试socks代理
+#export ALL_PROXY=socks5://127.0.0.1:40000
+#curl ip.sb
+curl chat.openai.com --proxy socks5://127.0.0.1:40000
+curl ip.sb --proxy socks5://127.0.0.1:40000
+
+# 验证其是否正常工作
+curl https://www.cloudflare.com/cdn-cgi/trace/ --proxy socks5://127.0.0.1:40000
