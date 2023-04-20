@@ -1,9 +1,34 @@
 # Configuration file & Notes
 
-1. Shadowrocket config
+1. Shadowrocket
 
+lazy_conf
+```
+https://raw.githubusercontent.com/fy-deng/config/main/Shadowrocket.conf
+```
+
+config
 ```
 https://raw.githubusercontent.com/fy-deng/config/main/default.conf
+```
+
+GeoLite2-ASN.mmdb
+```
+https://git.io/GeoLite2-ASN.mmdb
+```
+```
+https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-ASN.mmdb
+```
+```
+https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-Country.mmdb
+```
+
+GeoLite2-Country.mmdb
+```
+https://git.io/GeoLite2-Country.mmdb
+```
+```
+https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-City.mmdb
 ```
 
 2. Download sshd_config
