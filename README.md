@@ -33,16 +33,22 @@ https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-City.mmdb
 
 2. Download sshd_config
 
-:. Debian (GCI)
-
 ```
-sudo curl -Lo /etc/ssh/sshd_config https://raw.githubusercontent.com/fy-deng/config/main/ssh/gcp-sshd_config && systemctl restart sshd
+curl -Lo ~/ssh_upd.sh https://raw.githubusercontent.com/fy-deng/config/main/ssh_upd.sh && \
+chmod +x ssh_upd.sh
+./ssh_upd.sh
+```
+
+:. Debian (GCI)
+```
+sudo curl -Lo /etc/ssh/sshd_config https://raw.githubusercontent.com/fy-deng/config/main/ssh/gcp-sshd_config && \
+sudo systemctl restart sshd
 ```
 
 :. Ubuntu (OCI)
-
 ```
-sudo curl -Lo /etc/ssh/sshd_config https://raw.githubusercontent.com/fy-deng/config/main/ssh/ocp-sshd_config && systemctl restart sshd
+sudo curl -Lo /etc/ssh/sshd_config https://raw.githubusercontent.com/fy-deng/config/main/ssh/ocp-sshd_config && \
+sudo systemctl restart sshd
 ```
 
 3. Create a specific account + ACL
