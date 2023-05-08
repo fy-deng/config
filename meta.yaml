@@ -1,0 +1,293 @@
+######### 锚点 start #######
+mode: rule
+ipv6: true
+log-level: info
+allow-lan: true
+mixed-port: 7890
+unified-delay: false
+tcp-concurrent: true
+
+external-controller: 0.0.0.0:9090
+#external-ui: ui
+secret: ""
+
+geodata-mode: true
+geox-url:
+  geoip: "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
+  geosite: "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
+  mmdb: "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb"
+
+find-process-mode: strict
+global-client-fingerprint: chrome
+
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+sniffer:
+  enable: true
+  sniff:
+    TLS:
+      ports: [443, 8443]
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+
+tun:
+  enable: true
+  stack: system
+  dns-hijack:
+    - 'any:53'
+  auto-route: true
+  auto-detect-interface: true
+
+dns:
+  enable: true
+  listen: :1053
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 28.0.0.1/8
+  fake-ip-filter:
+    - '*'
+    - '+.lan'
+  default-nameserver:
+    - 223.5.5.5
+  nameserver:
+    - 'tls://8.8.4.4#dns'
+    - 'tls://1.0.0.1#dns'
+  proxy-server-nameserver:
+    - https://doh.pub/dns-query
+  nameserver-policy:
+    "geosite:cn,private":
+      - https://doh.pub/dns-query
+      - https://dns.alidns.com/dns-query
+
+proxies:
+  - name: "HK1-Vision"
+    type: vless
+    server: hk1.dfy.pp.ua
+    port: 443
+    uuid: 89f58661-3e72-4898-a91b-f854b163cfaa
+    network: tcp
+    tls: true
+    udp: true
+    flow: xtls-rprx-vision
+    servername: hk1.dfy.pp.ua
+    client-fingerprint: chrome
+
+  - name: "US1-Vision"
+    type: vless
+    server: us1.dfy.pp.ua
+    port: 443
+    uuid: 89f58661-3e72-4898-a91b-f854b163cfaa
+    network: tcp
+    tls: true
+    udp: true
+    flow: xtls-rprx-vision
+    servername: us1.dfy.pp.ua
+    client-fingerprint: chrome
+
+  - name: "HK2-Vision-REALITY"
+    type: vless
+    server: hk2.dfy.pp.ua
+    port: 443
+    uuid: e4252a03-82df-4b4b-8e4c-f75120353182
+    network: tcp
+    tls: true
+    udp: true
+    flow: xtls-rprx-vision
+    servername: todoist.com
+    reality-opts:
+      public-key: 5wz1bVL_W_xk6Nzj0GoX6GciOZBjTLWARE6aSkIphnA
+      short-id: 7d452d67f1
+    client-fingerprint: chrome
+
+  - name: "TW1-Vision-REALITY"
+    type: vless
+    server: tw1.dfy.pp.ua
+    port: 443
+    uuid: e4252a03-82df-4b4b-8e4c-f75120353182
+    network: tcp
+    tls: true
+    udp: true
+    flow: xtls-rprx-vision
+    servername: www.airbnb.com.tw
+    reality-opts:
+      public-key: 5wz1bVL_W_xk6Nzj0GoX6GciOZBjTLWARE6aSkIphnA
+      short-id: 75968d37
+    client-fingerprint: chrome
+
+  - name: "A2-Vision-REALITY"
+    type: vless
+    server: a2.frobel.pp.ua
+    port: 443
+    uuid: e4252a03-82df-4b4b-8e4c-f75120353182
+    network: tcp
+    tls: true
+    udp: true
+    flow: xtls-rprx-vision
+    servername: www.lovelive-anime.jp
+    reality-opts:
+      public-key: 5wz1bVL_W_xk6Nzj0GoX6GciOZBjTLWARE6aSkIphnA
+      short-id: 7a2fa20b68d1
+    client-fingerprint: chrome
+
+  - name: "A1-Vision"
+    type: vless
+    server: a1.frobel.pp.ua
+    port: 443
+    uuid: 89f58661-3e72-4898-a91b-f854b163cfaa
+    network: tcp
+    tls: true
+    udp: true
+    flow: xtls-rprx-vision
+    servername: a1.frobel.pp.ua
+    client-fingerprint: chrome
+
+  - name: "A1-trojan"
+    type: trojan
+    server: a1.frobel.pp.ua
+    port: 443
+    password: 89f58661-3e72-4898-a91b-f854b163cfaa
+
+  - name: "M1-Vision-REALITY"
+    type: vless
+    server: m1.dcdc.eu.org
+    port: 443
+    uuid: e4252a03-82df-4b4b-8e4c-f75120353182
+    network: tcp
+    tls: true
+    udp: true
+    flow: xtls-rprx-vision
+    servername: www.lovelive-anime.jp
+    reality-opts:
+      public-key: 5wz1bVL_W_xk6Nzj0GoX6GciOZBjTLWARE6aSkIphnA
+      short-id: 7a2fa20b68d1
+    client-fingerprint: chrome
+
+  - name: "M2-Vision-REALITY"
+    type: vless
+    server: m2.dcdc.eu.org
+    port: 443
+    uuid: e4252a03-82df-4b4b-8e4c-f75120353182
+    network: tcp
+    tls: true
+    udp: true
+    flow: xtls-rprx-vision
+    servername: itunes.apple.com
+    reality-opts:
+      public-key: 5wz1bVL_W_xk6Nzj0GoX6GciOZBjTLWARE6aSkIphnA
+      short-id: 3cbe6a55d0e426
+    client-fingerprint: chrome
+
+  - name: "M2-hysteria"
+    type: hysteria
+    server: m2.dcdc.eu.org
+    port: 10385
+    auth_str: SrePpEXm2oFfNE5w
+    alpn:
+      - h3
+    protocol: udp
+    up: "50 Mbps"
+    down: "150 Mbps"
+    sni: m2.dcdc.eu.org
+
+  - name: M2-tuic
+    server: m2.dcdc.eu.org
+    port: 12386
+    type: tuic
+    token: zF52NVDurEbse35y
+    alpn: [h3]
+    congestion-controller: bbr
+    sni: m2.dcdc.eu.org
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🔰 手动选择1
+      - 🔰 手动选择2
+      - 🔰 手动选择3
+      - DIRECT
+  - name: ♻️ 自动选择
+    type: url-test
+    proxies:
+      - HK2-Vision-REALITY
+      - TW1-Vision-REALITY
+      - HK1-Vision
+      - US1-Vision
+      - A2-Vision-REALITY
+      - M1-Vision-REALITY
+      - M2-Vision-REALITY
+      - A1-Vision
+      - M2-hysteria
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 100
+  - name: 🔰 手动选择1
+    type: select
+    proxies:
+      - HK2-Vision-REALITY
+      - TW1-Vision-REALITY
+      - HK1-Vision
+      - US1-Vision
+      - A2-Vision-REALITY
+      - M1-Vision-REALITY
+      - M2-Vision-REALITY
+      - A1-Vision
+      - M2-hysteria
+  - name: 🔰 手动选择2
+    type: select
+    proxies:
+      - HK2-Vision-REALITY
+      - TW1-Vision-REALITY
+      - HK1-Vision
+      - US1-Vision
+      - A2-Vision-REALITY
+      - M1-Vision-REALITY
+      - M2-Vision-REALITY
+      - A1-Vision
+      - M2-hysteria
+  - name: 🔰 手动选择3
+    type: select
+    proxies:
+      - HK2-Vision-REALITY
+      - TW1-Vision-REALITY
+      - HK1-Vision
+      - US1-Vision
+      - A2-Vision-REALITY
+      - M1-Vision-REALITY
+      - M2-Vision-REALITY
+      - A1-Vision
+      - M2-hysteria
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🔰 手动选择1
+      - 🔰 手动选择2
+      - 🔰 手动选择3
+      - DIRECT
+
+rules:
+  - GEOSITE,openai,🔰 手动选择2  
+  - GEOSITE,biliintl, 🚀 节点选择
+  - GEOSITE,ehentai,🚀 节点选择
+  - GEOSITE,github,🚀 节点选择
+  - GEOSITE,twitter,🚀 节点选择
+  - GEOSITE,youtube,🚀 节点选择
+  - GEOSITE,google,🚀 节点选择
+  - GEOSITE,telegram,🚀 节点选择
+  - GEOSITE,netflix,🚀 节点选择
+  - GEOSITE,bilibili,DIRECT
+  - GEOSITE,bahamut,🚀 节点选择
+  - GEOSITE,spotify,🚀 节点选择
+  - GEOSITE,geolocation-!cn,🚀 节点选择
+
+  - GEOIP,google,🚀 节点选择
+  - GEOIP,netflix,🚀 节点选择
+  - GEOIP,telegram,🚀 节点选择
+  - GEOIP,twitter,🚀 节点选择
+  - GEOSITE,CN,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,🐟 漏网之鱼
