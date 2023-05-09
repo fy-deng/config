@@ -1,5 +1,7 @@
 # Behavior: domain
 
 payload:
+- "+.jsdelivr.net"
+- "+.ghPROXY.com"
 - "+.tvyb03.com"
 - "www.aliyundrive.com"
