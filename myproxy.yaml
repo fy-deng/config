@@ -3,6 +3,10 @@
 
 payload:
 - "+.podcasts.apple.com"
+- "+.lookkeeper.itunes.apple.com"
+- "+.play.itunes.apple.com"
+- "+.lookup-api.apple.com"
+- "+.xp.apple.com"
 - "+.bag.itunes.apple.com"
 - "+.bookeeper.itunes.apple.com"
 - "+.googleapis.cn"
